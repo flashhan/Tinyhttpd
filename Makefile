@@ -1,9 +1,9 @@
 all: httpd client
 LIBS = -lpthread #-lsocket
-httpd: httpd.c
+httpd: httpd.c base_type.h
 	gcc -g -W -Wall $(LIBS) -o $@ $<
 
-client: simpleclient.c
+client: simpleclient.c base_type.h
 	gcc -W -Wall -o $@ $<
 clean:
 	rm httpd
